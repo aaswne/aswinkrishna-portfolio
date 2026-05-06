@@ -1,0 +1,74 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  color: white;
+  font-family: "Inter", sans-serif;
+  position: fixed;
+  width: 90%;
+  height: 5vh;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-links a:hover {
+  color: blue;
+}
+
+.remix-btn {
+  background: white;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.hamburg {
+  display: none;
+}
+
+@media (max-width: 786px) {
+  .navbar {
+    padding: 20px 20px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .hamburg {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 25px;
+  }
+}
+
+.icon {
+  display: inline-flex;
+  transition: all 0.3s ease;
+}
+
+.icon.open {
+  transform: rotate(180deg);
+  opacity: 0.8;
+}
+
+
