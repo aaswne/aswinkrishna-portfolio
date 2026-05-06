@@ -62,7 +62,7 @@ export default function CaseStudy() {
 
         {/* COVER IMAGE */}
         <div className="case-cover">
-          <img src={project.image} alt={project.title} />
+          <img src={project.image} alt={project.title}  loading="lazy"  />
         </div>
 
         {/* INFO GRID */}
@@ -117,6 +117,7 @@ export default function CaseStudy() {
               key={index}
               src={img}
               alt={`${project.title}-${index}`}
+              loading="lazy"
             />
           ))}
         </section>

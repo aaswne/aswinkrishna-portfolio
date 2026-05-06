@@ -12,7 +12,7 @@ export default function Projects() {
           key={project.id}
         >
           <div className="project-image-box">
-            <img src={project.image} alt={project.title} />
+            <img src={project.image} alt={project.title}  loading="lazy" />
           </div>
 
           <h3 className="project-title">
