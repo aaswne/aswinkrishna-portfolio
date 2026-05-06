@@ -6,8 +6,8 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-left">
         <h2>
-          We specialize in crafting exceptional digital experiences to help our
-          clients achieve their business goals.
+          I design and build modern, high-performance web applications with a
+          focus on usability, scalability, and seamless user experience.
         </h2>
 
         <a href="mailto:ashhwin041@gmail.com" className="footer-btn">

@@ -1,5 +1,5 @@
 import "./Hero.css";
-export default function Hero() {
+export default function Hero({open,}) {
 
   return (
     <section className="hero">

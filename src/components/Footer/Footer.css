@@ -86,6 +86,10 @@
   font-weight: 400;
 }
 
+.footer-links a:hover{
+  color: blue;
+}
+
 /* Tablet */
 @media (max-width: 1024px) {
   .footer {

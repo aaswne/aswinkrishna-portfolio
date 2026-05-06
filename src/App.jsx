@@ -15,7 +15,7 @@ function Home({ open, handleClick }) {
     <div className="app">
       <NavBar open={open} handleClick={handleClick} />
 
-      <Hero />
+      <Hero/>
 
       <section id="work">
         <Projects />
@@ -45,7 +45,6 @@ export default function App() {
     <BrowserRouter>
       <Routes>
 
-        {/* HOME */}
         <Route
           path="/"
           element={
@@ -56,7 +55,7 @@ export default function App() {
           }
         />
 
-        {/* DYNAMIC CASE STUDY */}
+      
         <Route
           path="/project/:id"
           element={<CaseStudy />}

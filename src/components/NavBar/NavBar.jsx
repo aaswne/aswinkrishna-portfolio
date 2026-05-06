@@ -1,34 +1,39 @@
 import "./NavBar.css";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { IoClose } from "react-icons/io5";
+import { useState, useEffect } from "react";
 
 export default function Navbar({ handleClick, open }) {
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
-    <nav className="navbar">
-      <div className="logo">Aswin Krishna</div>
+      <nav className="navbar">
+        <div className="logo">Aswin Krishna</div>
 
-      <ul className="nav-links">
-        <li>
-          <a href="#work">Work</a>
-        </li>
-        <li>
-          <a href="#lab">Lab</a>
-        </li>
-        <li>
-          <a href="#connect">Connect</a>
-        </li>
-        <li>
-          <button className="remix-btn">day</button>
-        </li>
-      </ul>
+        <ul className="nav-links">
+          <li>
+            <a href="#work">Work</a>
+          </li>
+          <li>
+            <a href="#lab">Lab</a>
+          </li>
+          <li>
+            <a href="#connect">Connect</a>
+          </li>
+          <li>
+            <button className="remix-btn">day</button>
+          </li>
+        </ul>
 
-      <button onClick={handleClick} className="hamburg">
-        <span className={`icon ${open ? "open" : ""}`}>
-          {open ? <IoClose /> : <RxHamburgerMenu />}
-        </span>
-      </button>
-    </nav>
+        <p className="time" >{time.toLocaleTimeString()}</p>
+      </nav>
     </>
   );
 }

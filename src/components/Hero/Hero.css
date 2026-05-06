@@ -61,7 +61,7 @@
 }
 
 .hero-btn:hover {
-  background:white;
+  background: white;
   color: black;
 }
 
@@ -81,7 +81,7 @@
     margin-bottom: 0;
   }
 
-  .hero-btn{
+  .hero-btn {
     padding: 12px 24px;
   }
 
@@ -94,3 +94,6 @@
     font-size: 40px;
   }
 }
+
+
+
