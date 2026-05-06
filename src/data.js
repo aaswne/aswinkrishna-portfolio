@@ -6,7 +6,7 @@ export const projects = [
     year: "2026",
     role: "Frontend Developer",
     stack: "React, Next.js, Firebase, ",
-    image: "/postly.png",
+    image: "/postly.webp",
     live: "https://postly-web-coral.vercel.app",
     repo: "https://github.com/aaswne/postly-web",
 
@@ -19,7 +19,7 @@ export const projects = [
     solution:
       "A minimal single-page tool with instant conversion and a clean user experience.",
 
-    gallery: ["/postly-1.png", "/postly-2.png"],
+    gallery: ["/postly-1.webp", "/postly-2.webp"],
   },
 
   {
@@ -29,7 +29,7 @@ export const projects = [
     year: "2025",
     role: "Frontend Developer",
     stack: "React, Firebase, Gemini API",
-    image: "/samsara.png",
+    image: "/samsara.webp",
     live: "#",
     repo: "#",
 
@@ -42,7 +42,7 @@ export const projects = [
     solution:
       "Designed a distraction-free interface with fast response rendering and simple conversation flow.",
 
-    gallery: ["/samsara-1.png", "/samsara-2.png"],
+    gallery: ["/samsara-1.webp", "/samsara-2.webp"],
   },
 
   {
@@ -52,7 +52,7 @@ export const projects = [
     year: "2025",
     role: "Frontend Developer",
     stack: "React, TMDB API",
-    image: "/netflix.png",
+    image: "/netflix.webp",
     live: "#",
     repo: "#",
 
@@ -65,7 +65,7 @@ export const projects = [
     solution:
       "Built reusable UI sections and dynamic movie rendering using APIs.",
 
-    gallery: ["/netflix-1.png", "/netflix-2.png"],
+    gallery: ["/netflix-1.webp", "/netflix-2.webp"],
   },
 
   {
@@ -75,7 +75,7 @@ export const projects = [
     year: "2025",
     role: "Frontend Developer",
     stack: "React, Firebase",
-    image: "/olx.png",
+    image: "/olx.webp",
     live: "#",
     repo: "#",
 
@@ -88,6 +88,6 @@ export const projects = [
     solution:
       "Created a responsive product-based UI with clean navigation and reusable components.",
 
-    gallery: ["/olx-1.png", "/olx-2.png"],
+    gallery: ["/olx-1.webp", "/olx-2.webp"],
   },
 ];
