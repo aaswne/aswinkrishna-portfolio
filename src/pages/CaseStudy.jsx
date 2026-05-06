@@ -1,5 +1,4 @@
-import NavBar from "../components/NavBar/NavBar";
-import Footer from "../components/Footer/Footer";
+
 import { FiArrowUpRight } from "react-icons/fi";
 import { useParams } from "react-router-dom";
 import { projects } from "../data";
@@ -14,20 +13,19 @@ export default function CaseStudy() {
   if (!project) {
     return (
       <>
-        <NavBar />
+    
 
         <main className="case-study">
           <h1>Project not found</h1>
         </main>
 
-        <Footer />
       </>
     );
   }
 
   return (
     <>
-      <NavBar />
+
 
       <main className="case-study">
 
@@ -124,7 +122,7 @@ export default function CaseStudy() {
 
       </main>
 
-      <Footer />
+  
     </>
   );
 }
