@@ -19,7 +19,7 @@ export const projects = [
     solution:
       "A minimal single-page tool with instant conversion and a clean user experience.",
 
-    gallery: ["/postly-1.webp", "/postly-2.webp"],
+    gallery: ["/postly-1.webp", ],
   },
 
   {
@@ -88,6 +88,6 @@ export const projects = [
     solution:
       "Created a responsive product-based UI with clean navigation and reusable components.",
 
-    gallery: ["/olx-1.webp", "/olx-2.webp"],
+    gallery: ["/olx-1.webp", ],
   },
 ];

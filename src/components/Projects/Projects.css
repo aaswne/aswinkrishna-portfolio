@@ -12,7 +12,7 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
 }
 
 .project-image-box {
-  background: #c8c2ff;
+  background:transparent;
   border-radius: 22px;
   overflow: hidden;
   aspect-ratio: 1.32 / 1;
