@@ -20,7 +20,10 @@ export default function ProjectCard() {
     );
   }
 
-  const stackItems = project.stack.split(",").map((s) => s.trim()).filter(Boolean);
+  const stackItems = project.stack
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
 
   return (
     <div className="pc-overlay" onClick={() => navigate(-1)}>
@@ -33,6 +36,7 @@ export default function ProjectCard() {
             <div className="pc-mockup__bar" aria-hidden="true">
               <span /><span /><span />
             </div>
+
             <img
               src={project.image}
               alt={project.title}
@@ -44,6 +48,7 @@ export default function ProjectCard() {
 
         {/* ── RIGHT: Info ── */}
         <div className="pc-right">
+
           <button
             className="pc-close"
             onClick={() => navigate(-1)}
@@ -56,16 +61,25 @@ export default function ProjectCard() {
             {project.year} · {project.role}
           </span>
 
+          {/* STATUS */}
+          <div className="pc-status">
+            <span className="pc-status__dot" />
+            {project.status}
+          </div>
+
           <h1 className="pc-title">{project.title}</h1>
 
           <p className="pc-accent">{project.subtitle}</p>
+
           <p className="pc-stack-line">{project.stack}</p>
 
           <p className="pc-desc">{project.overview}</p>
 
           <div className="pc-pills">
             {stackItems.map((tech) => (
-              <span key={tech} className="pc-pill">{tech}</span>
+              <span key={tech} className="pc-pill">
+                {tech}
+              </span>
             ))}
           </div>
 
@@ -89,9 +103,13 @@ export default function ProjectCard() {
               >
                 <FiExternalLink size={14} />
                 Visit App
-                <FiArrowUpRight size={14} className="pc-btn__arrow" />
+                <FiArrowUpRight
+                  size={14}
+                  className="pc-btn__arrow"
+                />
               </a>
             )}
+
             {project.repo !== "#" && (
               <a
                 href={project.repo}

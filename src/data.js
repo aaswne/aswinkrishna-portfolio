@@ -4,11 +4,12 @@ export const projects = [
     title: "Postly Dev Tool",
     subtitle: "Convert CSV, JSON, and XML in one click",
     year: "2026",
+    status: "Working",
     role: "Frontend Developer",
-    stack: "React, Next.js, Firebase, ",
+    stack: "React, Next.js, Firebase",
     image: "/postly.webp",
     live: "https://postly-web-coral.vercel.app",
-    repo: "https://github.com/aaswne/postly-web",
+    repo: "",
 
     overview:
       "Postly is a developer utility tool designed to simplify data transformation between CSV, JSON, and XML formats.",
@@ -19,7 +20,7 @@ export const projects = [
     solution:
       "A minimal single-page tool with instant conversion and a clean user experience.",
 
-    gallery: ["/postly-1.webp", ],
+    gallery: ["/postly-1.webp"],
   },
 
   {
@@ -27,10 +28,11 @@ export const projects = [
     title: "Samsara AI",
     subtitle: "AI chat application powered by Gemini",
     year: "2025",
+    status: "Working",
     role: "Frontend Developer",
     stack: "React, Firebase, Gemini API",
     image: "/samsara.webp",
-    live: "#",
+    live: "https://samsara-ai-chatbot.vercel.app",
     repo: "#",
 
     overview:
@@ -50,10 +52,11 @@ export const projects = [
     title: "Netflix Clone",
     subtitle: "Streaming platform inspired by Netflix",
     year: "2025",
+    status: "Working",
     role: "Frontend Developer",
     stack: "React, TMDB API",
     image: "/netflix.webp",
-    live: "#",
+    live: "https://aaswne.github.io/Netflix-Clone/",
     repo: "#",
 
     overview:
@@ -69,25 +72,26 @@ export const projects = [
   },
 
   {
-    id: "olx",
-    title: "Marketplace App",
-    subtitle: "Marketplace platform inspired by OLX India",
-    year: "2025",
+    id: "doit",
+    title: "Do It Task Manager",
+    subtitle: "Modern minimal task management application",
+    year: "2026",
+    status: "Working",
     role: "Frontend Developer",
-    stack: "React, Firebase",
-    image: "/olx.webp",
-    live: "#",
-    repo: "#",
+    stack: "Next.js, React, Tailwind CSS",
+    image: "/doit.webp",
+    live: "https://do-it-task-manager-seven.vercel.app",
+    repo: "https://github.com/aaswne/doIt-task-manager",
 
     overview:
-      "A marketplace application where users can browse and post products.",
+      "Do It is a modern minimal task management app built for productivity and focus with a clean dark UI.",
 
     problem:
-      "Understanding marketplace UI systems and product listing structures.",
+      "Many todo applications feel cluttered and distracting for users who want a simple workflow.",
 
     solution:
-      "Created a responsive product-based UI with clean navigation and reusable components.",
+      "Designed a responsive minimal task manager with clean task organization, smooth UI, and mobile-friendly experience.",
 
-    gallery: ["/olx-1.webp", ],
+    gallery: ["/doit-1.webp"],
   },
 ];
