@@ -1,39 +1,31 @@
 import "./NavBar.css";
-import { useState, useEffect } from "react";
 
-export default function Navbar({ handleClick, open }) {
-  const [time, setTime] = useState(new Date());
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
+export default function Navbar() {
   return (
-    <>
+    <header className="navbar-wrapper">
       <nav className="navbar">
-        <div className="logo">Aswin Krishna</div>
+        <a href="/" className="logo">
+          Aswin Krishna
+        </a>
 
         <ul className="nav-links">
           <li>
             <a href="#work">Work</a>
           </li>
+
           <li>
             <a href="#lab">Lab</a>
           </li>
+
           <li>
             <a href="#connect">Connect</a>
           </li>
-          <li>
-            <button className="remix-btn">day</button>
-          </li>
         </ul>
 
-        <p className="time" >{time.toLocaleTimeString()}</p>
+        <a href="#connect" className="nav-button">
+         Hire Me
+        </a>
       </nav>
-    </>
+    </header>
   );
 }

@@ -1,26 +1,42 @@
 import { Link } from "react-router-dom";
+import { FiArrowUpRight } from "react-icons/fi";
 import { projects } from "../../data";
 import "./Projects.css";
 
 export default function Projects() {
   return (
-    <section className="projects">
-      {projects.map((project) => (
-        <Link
-          to={`/project/${project.id}`}
-          className="project-card"
-          key={project.id}
-        >
-          <div className="project-image-box">
-            <img src={project.image} alt={project.title}  loading="lazy" />
-          </div>
+    <section className="projects-section">
+      <div className="projects-grid">
+        {projects.map((project) => (
+          <Link
+            to={`/project/${project.id}`}
+            className="project-card"
+            key={project.id}
+          >
+            <div className="card-image-wrap">
+              <img
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+              />
+            </div>
 
-          <h3 className="project-title">
-            <span className="title-top">{project.title}</span>
-            <span className="title-bottom">{project.subtitle}</span>
-          </h3>
-        </Link>
-      ))}
+            <div className="card-content">
+              <span className="card-tag">{project.stack}</span>
+
+              <div className="card-header">
+                <h3 className="card-title">{project.title}</h3>
+
+                <div className="card-icon">
+                  <FiArrowUpRight />
+                </div>
+              </div>
+
+              <p className="card-desc">{project.subtitle}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
     </section>
   );
 }
