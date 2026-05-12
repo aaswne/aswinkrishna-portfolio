@@ -37,6 +37,7 @@ export default function Projects() {
           </Link>
         ))}
       </div>
+      <button onClick={()=>window.open("https://github.com/aaswne?tab=repositories")}>More projects</button>
     </section>
   );
 }

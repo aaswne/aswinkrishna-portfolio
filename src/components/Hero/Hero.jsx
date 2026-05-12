@@ -17,7 +17,7 @@ export default function Hero({open,}) {
 
        <div className="hero-bottom">
   <a
-    href="/resume.pdf"
+    href="/ASWIN KRISHNA SDE FRONTEND.pdf"
     target="_blank"
     rel="noopener noreferrer"
     className="hero-btn"
