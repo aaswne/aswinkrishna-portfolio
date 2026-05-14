@@ -1,5 +1,6 @@
 import "./Footer.css";
 import { FiArrowUpRight } from "react-icons/fi";
+import { SiGooglemeet } from "react-icons/si";
 
 export default function Footer() {
   return (
@@ -10,9 +11,19 @@ export default function Footer() {
           focus on usability, scalability, and seamless user experience.
         </h2>
 
-        <a href="mailto:ashhwin041@gmail.com" className="footer-btn">
-          Let’s Work Together <FiArrowUpRight />
-        </a>
+       <a
+  href="https://calendar.app.google/kzme29jt4E4tEJxD8"
+  className="footer-btn"
+>
+  <img
+    src="https://www.gstatic.com/images/branding/product/1x/meet_2020q4_48dp.png"
+    alt="Google Meet"
+    width="22"
+    height="22"
+  />
+
+  Book a 15 minutes call
+</a>
         <p className="footer-credit">
           Designed & developed by <span> Aswin Krishna</span>
         </p>
