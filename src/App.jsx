@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import NavBar from "./components/NavBar/NavBar";
@@ -8,34 +8,17 @@ import Projects from "./components/Projects/Projects";
 import About from "./components/About/About";
 import Article from "./components/Article/Article";
 import Footer from "./components/Footer/Footer";
-
 import CaseStudy from "./pages/CaseStudy";
-
-/* =========================
-   PAGE TRANSITION
-========================= */
 
 function PageTransition({ children }) {
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-        y: 20,
-        scale: 0.98,
-      }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        scale: 1,
-      }}
-      exit={{
-        opacity: 0,
-        y: -20,
-        scale: 1.02,
-      }}
+      initial={{ opacity: 0, y: 0 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 0 }}
       transition={{
-        duration: 0.45,
-        ease: [0.22, 1, 0.36, 1],
+        duration: 0.3,
+        ease: "easeOut",
       }}
     >
       {children}
@@ -43,16 +26,11 @@ function PageTransition({ children }) {
   );
 }
 
-/* =========================
-   HOME PAGE
-========================= */
-
 function Home({ open, handleClick }) {
   return (
     <PageTransition>
       <div className="app">
         <NavBar open={open} handleClick={handleClick} />
-
         <Hero />
 
         <section id="work">
@@ -73,24 +51,19 @@ function Home({ open, handleClick }) {
   );
 }
 
-/* =========================
-   ROUTES
-========================= */
-
 function AnimatedRoutes({ open, handleClick }) {
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route
           path="/"
-          element={
-            <Home
-              open={open}
-              handleClick={handleClick}
-            />
-          }
+          element={<Home open={open} handleClick={handleClick} />}
         />
 
         <Route
@@ -106,10 +79,6 @@ function AnimatedRoutes({ open, handleClick }) {
   );
 }
 
-/* =========================
-   APP
-========================= */
-
 export default function App() {
   const [open, setOpen] = useState(false);
 
@@ -119,10 +88,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <AnimatedRoutes
-        open={open}
-        handleClick={handleClick}
-      />
+      <AnimatedRoutes open={open} handleClick={handleClick} />
     </BrowserRouter>
   );
 }
