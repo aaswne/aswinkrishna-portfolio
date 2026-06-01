@@ -7,7 +7,7 @@ export default function Hero({ open }) {
   return (
     <section style={{backgroundColor:darkMode?"white":"black",color:darkMode?"black":"white"}} className="hero">
       <div className="hero-top">
-        <p className="hero-desc">
+        <p  className="hero-desc">
           I build modern and responsive web applications to solve real-world
           problems.
         </p>
