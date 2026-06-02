@@ -6,15 +6,17 @@ import "./CaseStudy.css";
 export default function ProjectCard() {
   const { id } = useParams();
   const navigate = useNavigate();
+
   const project = projects.find((p) => p.id === id);
 
   if (!project) {
     return (
-      <div className="pc-overlay">
-        <div className="pc-card">
-          <p style={{ color: "rgba(255,255,255,0.4)", padding: 40 }}>
-            Project not found.
-          </p>
+      <div className="case-overlay">
+        <div className="case-empty">
+          <button className="case-close" onClick={() => navigate(-1)}>
+            <FiX />
+          </button>
+          <p>Project not found.</p>
         </div>
       </div>
     );
@@ -22,91 +24,82 @@ export default function ProjectCard() {
 
   const stackItems = project.stack
     .split(",")
-    .map((s) => s.trim())
+    .map((item) => item.trim())
     .filter(Boolean);
 
   return (
-    <div className="pc-overlay" onClick={() => navigate(-1)}>
-      <div className="pc-card" onClick={(e) => e.stopPropagation()}>
+    <div className="case-overlay" onClick={() => navigate(-1)}>
+      <article className="case-card" onClick={(e) => e.stopPropagation()}>
+        <button
+          className="case-close"
+          onClick={() => navigate(-1)}
+          aria-label="Close case study"
+        >
+          <FiX />
+        </button>
 
-        {/* ── LEFT: Mockup ── */}
-        <div className="pc-left">
-          <div className="pc-left__glow" aria-hidden="true" />
-          <div className="pc-mockup">
-            <div className="pc-mockup__bar" aria-hidden="true">
-              <span /><span /><span />
+        <div className="case-preview">
+          <div className="case-image-shell">
+            <div className="case-browser-bar">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
 
-            <img
-              src={project.image}
-              alt={project.title}
-              className="pc-mockup__img"
-              loading="eager"
-            />
+            <img src={project.image} alt={project.title} />
           </div>
         </div>
 
-        {/* ── RIGHT: Info ── */}
-        <div className="pc-right">
+        <div className="case-content">
+          <div className="case-meta">
+            <span>{project.year}</span>
+            <span>{project.role}</span>
+          </div>
 
-          <button
-            className="pc-close"
-            onClick={() => navigate(-1)}
-            aria-label="Close"
-          >
-            <FiX size={16} />
-          </button>
-
-          <span className="pc-badge">
-            {project.year} · {project.role}
-          </span>
-
-          {/* STATUS */}
-          <div className="pc-status">
-            <span className="pc-status__dot" />
+          <div className="case-status">
+            <span></span>
             {project.status}
           </div>
 
-          <h1 className="pc-title">{project.title}</h1>
+          <h1>{project.title}</h1>
 
-          <p className="pc-accent">{project.subtitle}</p>
+          <p className="case-subtitle">{project.subtitle}</p>
 
-          <p className="pc-stack-line">{project.stack}</p>
+          <p className="case-overview">{project.overview}</p>
 
-          <p className="pc-desc">{project.overview}</p>
-
-          <div className="pc-pills">
+          <div className="case-stack">
             {stackItems.map((tech) => (
-              <span key={tech} className="pc-pill">
-                {tech}
-              </span>
+              <span key={tech}>{tech}</span>
             ))}
           </div>
 
-          <div className="pc-bullets">
-            {[project.problem, project.solution].map((text, i) => (
-              <div className="pc-bullet" key={i}>
-                <span className="pc-bullet__dot" aria-hidden="true" />
-                {text}
+          <div className="case-details">
+            {project.problem && (
+              <div>
+                <small>Problem</small>
+                <p>{project.problem}</p>
               </div>
-            ))}
+            )}
+
+            {project.solution && (
+              <div>
+                <small>Solution</small>
+                <p>{project.solution}</p>
+              </div>
+            )}
           </div>
 
-          {/* Mobile-only action buttons */}
-          <div className="pc-actions">
+          <div className="case-actions">
             {project.live !== "#" && (
               <a
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="pc-btn pc-btn--primary"
+                className="case-btn case-btn-primary"
               >
-                <FiExternalLink size={14} />
+                <FiExternalLink />
                 Visit App
-                <FiArrowUpRight
-                  size={14}
-                  className="pc-btn__arrow"
-                />
+                <FiArrowUpRight />
               </a>
             )}
 
@@ -115,16 +108,15 @@ export default function ProjectCard() {
                 href={project.repo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="pc-btn pc-btn--ghost"
+                className="case-btn case-btn-secondary"
               >
-                <FiGithub size={14} />
-                Source
+                <FiGithub />
+                Source Code
               </a>
             )}
           </div>
-
         </div>
-      </div>
+      </article>
     </div>
   );
 }
