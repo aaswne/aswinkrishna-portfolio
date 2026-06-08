@@ -68,6 +68,7 @@ body {
 
   border-radius: 999px;
 
+
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.18);
 
@@ -194,7 +195,8 @@ body {
   .navbar {
     padding: 10px 12px;
     gap: 8px;
-
+    align-items: center;
+    display: flex;
   }
 
   .logo {
@@ -235,7 +237,6 @@ body {
   .navbar {
     width: 100%;
     max-width: 420px;
-
     padding: 9px 10px;
     gap: 4px;
   }
@@ -244,7 +245,7 @@ body {
     display: flex;
     align-items: center;
 
-    font-size: 0.68rem;
+    font-size: 0.88rem;
     font-weight: 600;
 
     white-space: nowrap;
@@ -265,7 +266,7 @@ body {
 
   .nav-links a {
     padding: 7px 6px;
-    font-size: 0.65rem;
+    font-size: 0.88rem;
   }
 
   .nav-button {
@@ -302,5 +303,50 @@ body {
     width: 28px;
     height: 28px;
     font-size: 0.85rem;
+  }
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 18px;
+    padding: 1rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.12),
+      inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    gap: 1rem;
+    width: 90%;
   }
 }
