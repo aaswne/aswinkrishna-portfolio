@@ -2,12 +2,19 @@ import "./Hero.css";
 import { useContext } from "react";
 import ThemeContext from "../../Themes/ThemeContext";
 export default function Hero({ open }) {
-  const { darkMode, handleTheme } = useContext(ThemeContext);
+  const { darkMode, handleTheme, menuOpen } = useContext(ThemeContext);
 
   return (
-    <section style={{backgroundColor:darkMode?"white":"black",color:darkMode?"black":"white"}} className="hero">
+    <section
+      className={menuOpen ? "hero" : "hero-down"}
+      style={{
+        backgroundColor: darkMode ? "white" : "black",
+        color: darkMode ? "black" : "white",
+      }}
+      className="hero"
+    >
       <div className="hero-top">
-        <p  className="hero-desc">
+        <p className="hero-desc">
           I build modern and responsive web applications to solve real-world
           problems.
         </p>
@@ -16,16 +23,15 @@ export default function Hero({ open }) {
       <div className="hero-row">
         <h1 className="hero-title">
           Frontend Developer <br />
-          Experience
+          React & Next.js
         </h1>
 
-        <div className="hero-bottom" >
+        <div className="hero-bottom">
           <a
             href="mailto:ashhwin041@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
-             className={darkMode?"hero-btn":"hero-btn-dark"}
-
+            className={darkMode ? "hero-btn" : "hero-btn-dark"}
           >
             Hire Me ↗
           </a>
@@ -34,7 +40,7 @@ export default function Hero({ open }) {
             href="https://github.com/aaswne"
             target="_blank"
             rel="noopener noreferrer"
-             className={darkMode?"hero-btn":"hero-btn-dark"}
+            className={darkMode ? "hero-btn" : "hero-btn-dark"}
           >
             GitHub ↗
           </a>

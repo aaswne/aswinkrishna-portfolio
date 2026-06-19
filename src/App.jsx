@@ -25,22 +25,19 @@ function PageTransition({ children }) {
 }
 
 function Home({ open, handleClick }) {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <PageTransition>
       <div className="app">
-        <NavBar open={open} handleClick={handleClick} />
-        <Hero />
-
+        <NavBar open={open} handleClick={handleClick} setMenuOpen={setMenuOpen} menuOpen={menuOpen}/>
+        <Hero menuOpen={menuOpen} />
         <section id="work">
           <Projects />
         </section>
-
         <About />
-
         <section id="lab">
           <Article />
         </section>
-
         <section id="connect">
           <Footer />
         </section>
@@ -59,7 +56,10 @@ function AnimatedRoutes({ open, handleClick }) {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home open={open} handleClick={handleClick} />} />
+        <Route
+          path="/"
+          element={<Home open={open} handleClick={handleClick} />}
+        />
 
         <Route
           path="/project/:id"

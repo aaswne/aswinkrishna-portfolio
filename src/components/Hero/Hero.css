@@ -86,6 +86,10 @@
     padding: 80px 20px;
     padding-top: 105px;
   }
+
+  .hero-down {
+   padding-top: 260px;
+  }
   .hero-row {
     display: block;
   }
@@ -95,8 +99,6 @@
     margin-top: 60px;
     margin-bottom: 0;
   }
-
- 
 
   .hero-desc {
     font-size: 1.4rem;
